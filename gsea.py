@@ -25,6 +25,14 @@ pre_res =gp.prerank(rnk = ranking, gene_sets = "WikiPathways_2019_Mouse")
 
 pre_res.results
 
+###
+## if get error, say no gene enriched then try following, then need to set some parameters
+pre_res =gp.prerank(rnk = ranking, gene_sets = 'KEGG_2019_Mouse', threads =4, min_size =5, max_size =1000,
+                   permutation_num =1000,
+                   outdir = None,
+                   seed = 6,
+                   verbose =True)
+
 # put result in a dataframe 
 out = []
 
